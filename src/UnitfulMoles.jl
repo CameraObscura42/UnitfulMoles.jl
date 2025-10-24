@@ -169,7 +169,7 @@ num_element(s::AbstractString) = isempty(s) ? 1 : Base.parse(Int, s)
 include("conventionalmoles.jl")
 
 # Allow precompile, and register mol units with u_str macro.
-const localunits = Unitful.basefactors
+const localunits = base.invokelatest(Unitful.basefactors)
 function __init__()
     merge!(Unitful.basefactors, localunits)
     Unitful.register(UnitfulMoles)
