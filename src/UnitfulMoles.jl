@@ -167,7 +167,7 @@ num_element(s::AbstractString) = isempty(s) ? 1 : Base.parse(Int, s)
 
 
 include("conventionalmoles.jl")
-
+Unitful._basefactors(@__MODULE__) # Initialize basefactors
 # Allow precompile, and register mol units with u_str macro.
 const localunits = Unitful.basefactors
 function __init__()
