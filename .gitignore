@@ -2,4 +2,4 @@
 *.jl.*.cov
 *.jl.mem
 *html
-Mainfest.toml
+Manifest.toml
